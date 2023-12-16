@@ -12,13 +12,12 @@ import { Product } from '../../../shared/models/product.model';
 })
 export class ProductComponent {
 
-  @Input({ required: true}) products!: Product;
+  @Input({ required: true}) product!: Product;
   
   @Output() addToCart = new EventEmitter();
 
   addCart() {
-    console.log('Add to cart');
-    this.addToCart.emit('From son');
+    this.addToCart.emit(this.product);
   }
 
 }
