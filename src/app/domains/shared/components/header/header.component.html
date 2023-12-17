@@ -87,10 +87,16 @@
             </svg>
         </button>
     </div>
-    <div>
-        <div *ngFor="let product of cart">
-            <p>{{ product.name }}</p>
+    <div class="pt-4 flex flex-col">
+        <div class="flex justify-between items-center space-y-2" *ngFor="let product of cart">
+            <div class="flex space-x-2 items-center">
+                <img [src]="product.image" [alt]="product.name" class="w-6 h6">
+                <h3>{{ product.name }}</h3>
+            </div>
             <p>{{ product.price }}</p>
+        </div>
+        <div class="">
+            <p>TOTAL {{ total() }}</p>
         </div>
     </div>
 </div>
